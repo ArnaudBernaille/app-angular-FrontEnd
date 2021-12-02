@@ -1,0 +1,40 @@
+<h1>{{title}}</h1> <!-- Syntaxe imortante pour passer la valeur d'une varaible dans notre page internet-->
+
+
+<!-- Comporte les scripts pour les premier cours-->
+
+<!-- BLOC DE COURS 1-->
+Le front 
+<button (click) = "onClick()"> Cliquer ici </button> <!--click correspond à l'eveneement que l'on cherche à écouter. -->
+
+
+<!-- 
+<input (keyup)="onKey($event)">  a chaque fois que l'utilisateur relache la touche la methode onKey appelé avec en paramètre l'evenement 
+<p>{{value}}</p>
+-->
+
+<!-- On va essayer d'utiliser une autre méthode : on va déclarer une variable local dans le template : -->
+
+<!--<input #box (keyup) = "0"> --> <!--Le 0 veut dire que nous ne voulons rien utiliser mais que nous voulons rendre pret à éxecuter la fonction -->
+<input #box (keyup) ="onKey(box.value)" > <!-- Box est un evenenement On va donc passer la valeur à la fonction onKey.-->
+<p>{{box.value}}</p> <!-- L'interpolation peut aussi servir à appeler des variables qui sont déclarées dans le template -->
+<!-- On peut aussi appeler la variable value qui appartient au component si on le souhaite.-->
+<!-- _______________________ -->
+
+
+<!-- BLOC DE COURS 2 -->
+<!-- petit point amusant : je ne peux pas déclarer deux fois la même variable dans la page -->
+<input #box2 (keyup.enter)="values=box2.value" (blur) = "values=box2.value" > <!-- La syntaxe : value=box.value nous permet de ne pas déclarer de méthode dans le app.component.ts
+mais d'attribuer directement la valeur -->
+<!-- Blur correspond à une perte de focus sur le champs texte -->
+<p>{{ values }}</p>
+<!-- _______________________ -->
+
+<div>
+
+<!-- BLOC DE COURS 3 -->
+<p *ngIf = "age > 18">Vous avez plus de 18 ans </p>
+
+<ul>
+    <li *ngFor = "let comp of ComparaisonAttribut"> {{comp.titre}} </li> <!-- VOilaaaaaaaaaaaaaaaaa-->
+</ul>
