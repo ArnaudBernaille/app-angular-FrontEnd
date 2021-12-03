@@ -43,17 +43,19 @@ export class DetailComparaisonComponent {
             this.compService.getComparaison(id)
             .subscribe(comp =>  this.comparaison = comp)
 
+    }
 
-
-
+    delete(comp : comparaison): void {
+        this.compService.deleteComparaison(comp)
+        .subscribe(_ => this.goBack()); // on s'abonne au service et une fois que une comparaison a été supprimer on est rediriger en arrière.
     }
 
     goBack(): void{
-        this.router.navigate(["/comparaison"]); // Pour retourner sur la page principale.
+        this.router.navigate(["/comparaisons"]); // Pour retourner sur la page principale.
         // window.history.back(); // Pour revenir à la derniere page de laquelle l'utilisateur vient
     }
 
-    goEdit(comp: comparaison):void{
+    goEdit(comp: comparaison): void{
         let link = ["/comparaison/edit", comp._id]
         this.router.navigate(link);
     }

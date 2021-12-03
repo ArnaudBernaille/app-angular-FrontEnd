@@ -57,9 +57,15 @@ export class EditComparaisonFormulaire implements OnInit{
 
 
     // Cette methode va juste rediriger l'utilisateur, les changements sont deja pris en compte grace à la methode NgModel.
-    onSubmit(): void{
+    onSubmit(): void {
         console.log('Submit form !');
-        let link = ['/comparaison', this.comparaison._id];
+        this.comparaisonService.updateComparaison(this.comparaison)
+        .subscribe(() => this.goBack())
+    }
+    
+
+    private goBack() : void {
+        let link = ["/comparaison", this.comparaison._id];
         this.router.navigate(link);
     }
 

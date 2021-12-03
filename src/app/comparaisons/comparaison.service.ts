@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { Component, Injectable } from "@angular/core";
 import { comparaison } from "./comparaison";
 // import { COMPARAISON } from "./mock-Comparaison"; // OLD
 
@@ -34,6 +34,18 @@ private handleError<T>(operation='operation', result?: T) { // operation est le 
     };
 }
 
+// j'ai mis any au lieu de comparaison. ça ne marche pas avec comparaison mais je ne sais pas pourquoi.
+updateComparaison(comparaison: comparaison) : Observable<any>{
+    const httpOptions = {
+        headers: new HttpHeaders({'Content-Type': 'application/json'})
+    };
+
+    return this.http.put(this.comparaisonUrl, comparaison,  httpOptions).pipe(
+        tap(_ => this.log(`update comparaison id = ${comparaison._id}`)),
+        catchError(this.handleError<any>('updatePokemon'))
+    )
+}
+
 // renvoie toutes les comparaisons
 getComparaisons(): Observable<comparaison[]>{
     return this.http.get<comparaison[]>(this.comparaisonUrl).pipe(
@@ -57,6 +69,18 @@ getComparaison(id : number): Observable<comparaison> { // je met any car compara
 getComparaisonTypes() : string[]{
     return ['Facebook', 'Instagram', 'Tinder', 'Page de vente', 'Autre'] // il faut en rajouter bien sûr.
 }
+
+deleteComparaison(comparaison: comparaison) : Observable<any>{
+    const url = `${this.comparaisonUrl}/${comparaison._id}`
+    const httpOptions = {
+        headers: new HttpHeaders({'Content-Type': 'application/json'})
+    };
+
+    return this.http.delete(this.comparaisonUrl, httpOptions).pipe(
+        tap(_ => this.log(`deleted comparaison id = ${comparaison._id}`)),
+        catchError(this.handleError<any>('deleteComparaison'))
+    )
+    }
 
 
 }

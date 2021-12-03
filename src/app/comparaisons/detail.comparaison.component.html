@@ -10,7 +10,14 @@
 <h3 class="col s6">{{comparaison.Contenu2}} <p> <button> VOTER </button> </h3>
 </div>
 
-<a (click) = 'goEdit(comparaison)'> Editer </a>
+
+<a (click) = 'goBack()' class = "waves-effect waves light btn"> Retour </a>
+<p>
+<div class="card-action">
+<a (click) = 'goEdit(comparaison)' class = "waves-effect waves light btn" > Editer </a>
+<p>
+<a (click) = 'delete(comparaison)' class = "waves-effect waves light btn"> Supprimer </a>
+</div>
 
 
 
