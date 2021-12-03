@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module'; // NPO d'importer le ro
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './pageNoteFound.component';
 import { comparaisonModule } from './comparaisons/comparaison.module'; // Contiend tous nos modules en rapport avec les comparaison
+import {HttpClientModule} from '@angular/common/http'
 
 @NgModule 
 ({
@@ -16,6 +17,7 @@ import { comparaisonModule } from './comparaisons/comparaison.module'; // Contie
   ],
   imports: [ // ! Attention à l'ordre d'importation des modules, c'est très important pour les routings
     BrowserModule, // les modules racines ont besoin d'importer ce module mais ce n'est pas le cas des autres.
+    HttpClientModule,
     comparaisonModule,
     AppRoutingModule
   ],

@@ -31,7 +31,7 @@ export class EditComparaisonFormulaire implements OnInit{
 
     // Pour savoir si la comparaison en cours d'édition possède un type.
     hasType(type: string): boolean{
-        let index = this.comparaison.types.indexOf(type);
+        let index = this.comparaison.Type.indexOf(type);
         if(~index) return true; 
         return false;
     }
@@ -42,9 +42,9 @@ export class EditComparaisonFormulaire implements OnInit{
         if(checked) {
             this.types.push(type)
         }else {
-            let index = this.comparaison.types.indexOf(type);
+            let index = this.comparaison.Type.indexOf(type);
             if(~index){
-                this.comparaison.types.splice(index, 1); // je comprend pas
+                this.comparaison.Type.splice(index, 1); // je comprend pas
             }
         }
     }
@@ -59,7 +59,7 @@ export class EditComparaisonFormulaire implements OnInit{
     // Cette methode va juste rediriger l'utilisateur, les changements sont deja pris en compte grace à la methode NgModel.
     onSubmit(): void{
         console.log('Submit form !');
-        let link = ['/comparaison', this.comparaison.id];
+        let link = ['/comparaison', this.comparaison._id];
         this.router.navigate(link);
     }
 

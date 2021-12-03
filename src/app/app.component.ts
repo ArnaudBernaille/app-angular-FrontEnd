@@ -2,7 +2,7 @@ import { Component } from '@angular/core'; // On importe les elemn que l'on veut
 import {OnInit}  from '@angular/core'; // pour pouvoir modifier ce qu'il se passe lorsque l'on créée un composant.
 
 import {comparaison} from './comparaisons/comparaison'
-import { COMPARAISON } from './comparaisons/mock-Comparaison';
+// import { COMPARAISON } from './comparaisons/mock-Comparaison'; // OLD
 
 //Le selector sert à ce que la page web reconnaisse le composant. Ici ce composant s'appel app-root
 @Component({

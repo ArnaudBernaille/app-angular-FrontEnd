@@ -4,19 +4,19 @@
 <div class = "container">
 <div class = "row">
 
-<div *ngFor = "let comp of ComparaisonAttribut">
+<div *ngFor = "let comp of comparaisons">
     <div class = "card horizontal" (click)="selectComparaison(comp)" compBorderCard = "red">
     <div class = "card-content">
-    <h3>{{ comp.titre }}</h3>
+    <h3>{{ comp.Titre }}</h3>
     
     <div class = "row">
     <div class="col s6">
-    {{ comp.comparaison1 | uppercase }} 
+    {{ comp.Contenu1 | uppercase }} 
     </div>
     <div class="col s6">
-    {{ comp.comparaison2 }}
+    {{ comp.Contenu2 }}
     </div>
-    <span class="{{ comp.types[0] | comparaisonTypeColor }}" > {{ comp.types }}</span>
+    <span class="{{ comp.Type[0] | comparaisonTypeColor }}" > {{ comp.Type }}</span>
     </div>
 
 

@@ -21,7 +21,7 @@ export class DetailComparaisonComponent {
         ngOnInit(): void { // void car pas de valeur de retour
            
 
-            let id = +this.route.snapshot.params['id']; // on recupere l'id de la comparaison contenue dans l'url
+            //let id = +this.route.snapshot.params['id']; // on recupere l'id de la comparaison contenue dans l'url
             // snapshot permet de récupérer le param de façon synchrone cad que l'on bloque l'execution du programme tant que on a pas récupéré 
             // l'identifiant recherché
 
@@ -37,7 +37,14 @@ export class DetailComparaisonComponent {
 
             // Maintenant on fait comme cela : 
 
-            this.comparaison = this.compService.getComparaison(id);
+            //this.comparaison = this.compService.getComparaison(id);
+
+            let id = +this.route.snapshot.params['id'];
+            this.compService.getComparaison(id)
+            .subscribe(comp =>  this.comparaison = comp)
+
+
+
 
     }
 
@@ -47,7 +54,7 @@ export class DetailComparaisonComponent {
     }
 
     goEdit(comp: comparaison):void{
-        let link = ["/comparaison/edit", comp.id]
+        let link = ["/comparaison/edit", comp._id]
         this.router.navigate(link);
     }
 }

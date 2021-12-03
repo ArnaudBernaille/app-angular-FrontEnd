@@ -1,5 +1,6 @@
 import { comparaison } from "./comparaison";
 
+/*
 export const COMPARAISON: comparaison[] = [
     {
         id: 1,
@@ -57,3 +58,4 @@ export const COMPARAISON: comparaison[] = [
     }
 
 ]
+*/
