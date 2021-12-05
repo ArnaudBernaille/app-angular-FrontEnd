@@ -10,6 +10,7 @@ import { ComparaisonService } from './comparaison.service';
 @Component({
   selector: 'listComp',
   templateUrl: './listComp.template.html', // TemplqteUrl correspond au code html du composant
+  styleUrls: ['./listComp.template.css'],
   //template: "<h1>List de comparaisons</h1>", // Si on veut un template simple écrit en dure. 
   //styleUrls: ['./app.component.css']
   //providers : [ComparaisonService] // Attention ne pas oublier pour les services. // Nous n'en avons pas besoin ici car nous allons le déclarer de façon global
