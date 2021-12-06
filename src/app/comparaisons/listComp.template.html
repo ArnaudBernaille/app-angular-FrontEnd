@@ -32,7 +32,7 @@
 
 
 
-<h1 class = "center"> Comparaison </h1>
+<!-- <h1 class = "center"> Comparaison </h1> -->
 <body>
 <!-- <div class = "container">
     <div class = "wrapper">
@@ -66,6 +66,22 @@
 
 
 <!-- https://dev.to/kunaal438/how-to-make-instagram-clone-using-html-css-fully-responsive-49co -->
+
+<!-- <nav class="navbar">
+    <div class="nav-wrapper">
+        <img src="icons/logo.png" class="brand-img" width="50" alt="">
+        <input type="text" class="search-box" placeholder="search">
+        <div class="nav-items">
+            <img src="img/home.PNG" class="icon" alt="">
+            <img src="img/messenger.PNG" class="icon" alt="">
+            <img src="img/add.PNG" class="icon" alt="">
+            <img src="img/explore.PNG" class="icon" alt="">
+            <img src="img/like.PNG" class="icon" alt="">
+            <div class="icon user-profile"></div>
+        </div>
+    </div>
+</nav> -->
+
 <section class="main">
     <div class="wrapper"> 
         <div class="left-col">
@@ -84,38 +100,38 @@
                 </div>
             </div>
             <div *ngFor = "let comp of comparaisons">
-        <div class="post">
-            <div class="info">
-                <div class="user">
-                    <div class="profile-pic"><img src="img/cover 1.png" alt=""></div>
-                    <p class="username" (click)="selectComparaison(comp)">Titre de la compa: {{ comp.Titre }}</p>
+                <div class="post">
+                    <div class="info">
+                        <div class="user">
+                            <div class="profile-pic"><img src="img/cover 1.png" alt=""></div>
+                            <p class="username" (click)="selectComparaison(comp)">Titre de la compa: {{ comp.Titre }}</p>
+                        </div>
+                        <img src="img/option.PNG" class="options" alt="">
+                    </div>
+                    <!-- <img src="img/cover 1.png" class="post-image" alt="">
+                    <img src="img/cover 2.png" class="post-image" alt=""> -->
+                    <div class="comp-container">
+                        <div class="img-container" style="width: 100%;"><p>{{comp.Contenu1}}</p></div>
+                        <div class="img-container" style="width: 100%;"><p>{{comp.Contenu2}}</p></div>
+                    </div>
+                    <div class="post-content">
+                        <div class="reaction-wrapper">
+                            <img src="img/like.PNG" class="icon" alt="">
+                            <img src="img/comment.PNG" class="icon" alt="">
+                            <img src="img/send.PNG" class="icon" alt="">
+                            <img src="img/save.PNG" class="save icon" alt="">
+                        </div>
+                        <p class="likes">1,012 likes</p>
+                        <p class="description"><span>username {{comp.id_User}}</span> {{comp.Description}} DLorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur tenetur veritatis placeat, molestiae impedit aut provident eum quo natus molestias?</p>
+                        <p class="post-time">Date du post : {{comp.Date}}</p>
+                    </div>
+                    <div class="comment-wrapper">
+                        <img src="img/smile.PNG" class="icon" alt="">
+                        <input type="text" class="comment-box" placeholder="Add a comment">
+                        <button class="comment-btn">post</button>
+                    </div>
                 </div>
-                <img src="img/option.PNG" class="options" alt="">
             </div>
-            <img src="img/cover 1.png" class="post-image" alt="">
-            <!-- <img src="img/cover 1.png" class="post-image" alt=""> -->
-            <div class="comp-container">
-                <div class="img-container" style="width: 100%;"><p>{{comp.Contenu1}}</p></div>
-                <div class="img-container" style="width: 100%;"><p>{{comp.Contenu2}}</p></div>
-            </div>
-            <div class="post-content">
-                <div class="reaction-wrapper">
-                    <img src="img/like.PNG" class="icon" alt="">
-                    <img src="img/comment.PNG" class="icon" alt="">
-                    <img src="img/send.PNG" class="icon" alt="">
-                    <img src="img/save.PNG" class="save icon" alt="">
-                </div>
-                <p class="likes">1,012 likes</p>
-                <p class="description"><span>username {{comp.id_User}}</span> {{comp.Description}} DLorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur tenetur veritatis placeat, molestiae impedit aut provident eum quo natus molestias?</p>
-                <p class="post-time">Date du post : {{comp.Date}}</p>
-            </div>
-            <div class="comment-wrapper">
-                <img src="img/smile.PNG" class="icon" alt="">
-                <input type="text" class="comment-box" placeholder="Add a comment">
-                <button class="comment-btn">post</button>
-            </div>
-        </div>
-        </div>
         </div>
 
         <div class="right-col">
